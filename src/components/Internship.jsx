@@ -1,63 +1,79 @@
 import React from 'react';
-import { FiBriefcase, FiCalendar, FiCheckCircle } from 'react-icons/fi';
+import { FiCheckCircle } from 'react-icons/fi';
 
-const Internship = () => {
-  const contributions = [
-    'Developed responsive web pages using HTML5, CSS3, and JavaScript',
-    'Built interactive UI components with React.js',
-    'Integrated RESTful APIs using Axios',
-    'Participated in code reviews and agile sprints',
-    'Optimized frontend performance and cross-browser compatibility',
-    'Collaborated with senior developers on real-world projects'
-  ];
+const internships = [
+  {
+    year: '2024',
+    company: 'Codesoft',
+    role: 'Web Development Intern',
+    color: '#d4af37',
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'React.js'],
+    contributions: [
+      'Built responsive web pages from Figma designs',
+      'Created reusable React components',
+      'Integrated REST APIs using Axios',
+      'Participated in agile sprints & code reviews',
+    ],
+  },
+  {
+    year: '2024',
+    company: 'Octonet Technologies',
+    role: 'Web Developer Intern',
+    color: '#d4af37',
+    tech: ['React.js', 'Node.js', 'MongoDB', 'Express'],
+    contributions: [
+      'Developed full-stack features end-to-end',
+      'Implemented JWT-based authentication',
+      'Optimized MongoDB queries for performance',
+      'Deployed applications to cloud platforms',
+    ],
+  },
+  {
+    year: '2023',
+    company: 'CodSoft Technologies',
+    role: 'UI/UX Design Intern',
+    color: '#d4af37',
+    tech: ['Figma', 'Adobe XD', 'Prototyping', 'User Research'],
+    contributions: [
+      'Designed wireframes and high-fidelity mockups',
+      'Conducted user research and usability testing',
+      'Created design systems and component libraries',
+      'Collaborated closely with development teams',
+    ],
+  },
+];
 
-  return (
-    <section className="section" id="internship" style={{ background:'rgba(99,102,241,0.02)' }}>
-      <div className="container">
-        <h2 className="section-title">Internship Experience</h2>
-        <p className="section-subtitle">Real-world experience that shaped my skills</p>
+const Internship = () => (
+  <section className="section" id="internship" style={{ background: 'rgba(212,175,55,0.01)' }}>
+    <div className="container">
+      <h2 className="section-title">Internship Experience</h2>
+      <div className="gold-line" />
 
-        <div style={{ maxWidth:'800px', margin:'0 auto' }}>
-          <div className="glass-card" style={{ padding:'40px', borderLeft:'4px solid', borderImageSource:'var(--gradient)', borderImageSlice:1 }}>
-            <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', flexWrap:'wrap', gap:'16px', marginBottom:'24px' }}>
-              <div>
-                <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'8px' }}>
-                  <FiBriefcase color="var(--primary)" size={20} />
-                  <h3 style={{ fontSize:'20px', fontWeight:'800' }}>Web Development Intern</h3>
+      <div className="timeline">
+        {internships.map((item, i) => (
+          <div className="timeline-item" key={i}>
+            <div className="timeline-dot" />
+            <div className="timeline-year">{item.year}</div>
+            <div className="timeline-title">{item.role}</div>
+            <div className="timeline-subtitle">{item.company}</div>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', margin: '12px 0' }}>
+              {item.tech.map((t, j) => <span className="badge" key={j}>{t}</span>)}
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+              {item.contributions.map((c, j) => (
+                <div key={j} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                  <FiCheckCircle size={13} color="var(--gold)" style={{ marginTop: '3px', flexShrink: 0 }} />
+                  <span style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: '1.6' }}>{c}</span>
                 </div>
-                <p style={{ fontSize:'18px', fontWeight:'700', background:'var(--gradient)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>
-                  Codesoft
-                </p>
-              </div>
-              <div style={{ display:'flex', alignItems:'center', gap:'8px', padding:'8px 16px', background:'rgba(102,126,234,0.1)', border:'1px solid rgba(102,126,234,0.3)', borderRadius:'50px', color:'var(--primary)', fontSize:'13px', fontWeight:'600' }}>
-                <FiCalendar size={14} /> Web Development Track
-              </div>
-            </div>
-
-            <div style={{ marginBottom:'24px' }}>
-              <div style={{ display:'flex', flexWrap:'wrap', gap:'8px' }}>
-                {['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Responsive Design', 'Git'].map((tech, i) => (
-                  <span className="badge" key={i}>{tech}</span>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h4 style={{ fontSize:'15px', fontWeight:'700', marginBottom:'16px', color:'var(--text-muted)' }}>KEY CONTRIBUTIONS</h4>
-              <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'12px' }}>
-                {contributions.map((item, i) => (
-                  <div key={i} style={{ display:'flex', alignItems:'flex-start', gap:'10px' }}>
-                    <FiCheckCircle size={16} color="var(--primary)" style={{ marginTop:'2px', flexShrink:0 }} />
-                    <span style={{ fontSize:'14px', color:'var(--text-muted)', lineHeight:'1.6' }}>{item}</span>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
-        </div>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Internship;

@@ -3,118 +3,85 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 
 const projects = [
   {
-    id: 1,
+    id: 1, category: 'mern',
     title: 'Price Comparison System',
-    category: 'mern',
     emoji: '💰',
-    gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
-    desc: 'A real-time price comparison platform that aggregates product prices from multiple sources, helping users find the best deals.',
-    features: [
-      'Real-time price aggregation',
-      'Search & filter products',
-      'Price history charts',
-      'User wishlist & alerts'
-    ],
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Axios'],
-    github: '#',
-    demo: '#'
+    gradient: 'linear-gradient(135deg, #1a1400, #3a2e00)',
+    desc: 'Real-time price comparison platform aggregating product prices from multiple sources.',
+    features: ['Real-time price aggregation', 'Search & filter', 'Price history', 'User wishlist'],
+    tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+    github: '#', demo: '#',
   },
   {
-    id: 2,
-    title: 'Grocery QR Code Tracker',
-    category: 'mern',
-    emoji: '📦',
-    gradient: 'linear-gradient(135deg, #f093fb, #f5576c)',
-    desc: 'Smart inventory management system using QR codes to track grocery stock levels and manage sales efficiently.',
-    features: [
-      'QR code generation & scanning',
-      'Real-time stock management',
-      'Sales analytics dashboard',
-      'Low stock notifications'
-    ],
-    tech: ['React', 'Node.js', 'MongoDB', 'QR Library', 'Chart.js'],
-    github: '#',
-    demo: '#'
+    id: 2, category: 'ai',
+    title: 'Plant Leaf Disease Detection',
+    emoji: '🌿',
+    gradient: 'linear-gradient(135deg, #001a0a, #003015)',
+    desc: 'AI-based system to detect plant diseases from leaf images using deep learning classification.',
+    features: ['Image classification', 'CNN model', 'Disease report', 'Cure suggestions'],
+    tech: ['Python', 'TensorFlow', 'React', 'Flask'],
+    github: '#', demo: '#',
   },
   {
-    id: 3,
+    id: 3, category: 'mern',
     title: 'Digital Complaint Box',
-    category: 'mern',
     emoji: '📬',
-    gradient: 'linear-gradient(135deg, #4facfe, #00f2fe)',
-    desc: 'A digital platform for college students to submit complaints anonymously, with admin panel for tracking and resolution.',
-    features: [
-      'Anonymous complaint submission',
-      'Admin management panel',
-      'Status tracking system',
-      'Email notifications'
-    ],
-    tech: ['React', 'Express', 'MongoDB', 'JWT', 'Nodemailer'],
-    github: '#',
-    demo: '#'
+    gradient: 'linear-gradient(135deg, #0a0a1a, #151530)',
+    desc: 'Platform for college students to submit complaints anonymously with admin tracking panel.',
+    features: ['Anonymous submission', 'Admin dashboard', 'Status tracking', 'Email alerts'],
+    tech: ['React', 'Express', 'MongoDB', 'JWT'],
+    github: '#', demo: '#',
   },
   {
-    id: 4,
+    id: 4, category: 'frontend',
     title: 'Personal Portfolio Website',
-    category: 'frontend',
     emoji: '🌐',
-    gradient: 'linear-gradient(135deg, #43e97b, #38f9d7)',
-    desc: 'This very portfolio — a modern, responsive developer portfolio built with React, featuring glassmorphism design and authentication.',
-    features: [
-      'Glassmorphism UI design',
-      'JWT Authentication system',
-      'Google OAuth integration',
-      'Dark/Light mode toggle'
-    ],
-    tech: ['React', 'Node.js', 'MongoDB', 'JWT', 'CSS3'],
-    github: '#',
-    demo: '#'
-  }
+    gradient: 'linear-gradient(135deg, #1a1400, #2a2000)',
+    desc: 'This portfolio — glassmorphism design with full authentication system.',
+    features: ['JWT Auth', 'Google OAuth', 'Dark mode', 'OTP Reset'],
+    tech: ['React', 'Node.js', 'MongoDB', 'JWT'],
+    github: '#', demo: '#',
+  },
 ];
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
-
-  const filtered = filter === 'all' ? projects : projects.filter(p => p.category === filter);
+  const filtered = filter === 'all' ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <section className="section" id="projects">
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
-        <p className="section-subtitle">Things I've built with passion and dedication</p>
+        <div className="gold-line" />
 
         <div className="project-filters">
-          {['all', 'mern', 'frontend'].map(f => (
-            <button
-              key={f}
-              className={`filter-btn ${filter === f ? 'active' : ''}`}
-              onClick={() => setFilter(f)}
-            >
+          {['all', 'mern', 'ai', 'frontend'].map((f) => (
+            <button key={f} className={`filter-btn ${filter === f ? 'active' : ''}`} onClick={() => setFilter(f)}>
               {f.toUpperCase()}
             </button>
           ))}
         </div>
 
         <div className="projects-grid">
-          {filtered.map(project => (
-            <div className="project-card" key={project.id}>
-              <div className="project-img" style={{ background: project.gradient }}>
-                <span style={{ fontSize:'56px', position:'relative', zIndex:1 }}>{project.emoji}</span>
+          {filtered.map((p) => (
+            <div className="project-card" key={p.id}>
+              <div className="project-img" style={{ background: p.gradient }}>
+                <span style={{ fontSize: '56px', position: 'relative', zIndex: 1 }}>{p.emoji}</span>
               </div>
               <div className="project-body">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-desc">{project.desc}</p>
+                <h3 className="project-title">{p.title}</h3>
+                <p className="project-desc">{p.desc}</p>
                 <ul className="project-features">
-                  {project.features.map((f, i) => <li key={i}>{f}</li>)}
+                  {p.features.map((f, i) => <li key={i}>{f}</li>)}
                 </ul>
                 <div className="tech-badges">
-                  {project.tech.map((t, i) => <span className="badge" key={i}>{t}</span>)}
+                  {p.tech.map((t, i) => <span className="badge" key={i}>{t}</span>)}
                 </div>
                 <div className="project-links">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="link-github">
+                  <a href={p.github} target="_blank" rel="noopener noreferrer" className="link-github">
                     <FiGithub /> GitHub
                   </a>
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="link-demo">
+                  <a href={p.demo} target="_blank" rel="noopener noreferrer" className="link-demo">
                     <FiExternalLink /> Live Demo
                   </a>
                 </div>

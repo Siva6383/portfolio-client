@@ -1,14 +1,13 @@
 import React from 'react';
-import { FiBook, FiAward } from 'react-icons/fi';
+import { FiAward } from 'react-icons/fi';
 
 const educations = [
   {
     year: '2022 – Present',
     degree: 'B.E. Computer Science Engineering',
     institution: 'SNS College of Engineering',
-    detail: 'Lateral Entry | CGPA: 8.18',
+    detail: 'CGPA: 8.18',
     icon: '🎓',
-    color: 'linear-gradient(135deg, #667eea, #764ba2)'
   },
   {
     year: '2019 – 2022',
@@ -16,35 +15,49 @@ const educations = [
     institution: 'Kalasalingam Polytechnic College',
     detail: 'Percentage: 80%',
     icon: '📚',
-    color: 'linear-gradient(135deg, #f093fb, #f5576c)'
-  }
+  },
+  {
+    year: '2019 – 2020',
+    degree: 'HSC (Higher Secondary Certificate)',
+    institution: 'G.S Hindu Higher Secondary School',
+    detail: 'Percentage: 51%',
+    icon: '🏫',
+  },
+  {
+    year: '2017 – 2018',
+    degree: 'SSLC (Secondary School)',
+    institution: 'G.S Hindu Higher Secondary School',
+    detail: 'Percentage: 68.2%',
+    icon: '📖',
+  },
 ];
 
-const Education = () => {
-  return (
-    <section className="section" id="education">
-      <div className="container">
-        <h2 className="section-title">Education</h2>
-        <p className="section-subtitle">Academic foundation that drives my technical journey</p>
+const Education = () => (
+  <section className="section" id="education">
+    <div className="container">
+      <h2 className="section-title">Education</h2>
+      <div className="gold-line" />
 
-        <div className="timeline">
-          {educations.map((edu, i) => (
-            <div className="timeline-item" key={i}>
-              <div style={{ position:'absolute', left:'-52px', top:'24px', width:'40px', height:'40px', background:edu.color, borderRadius:'12px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'18px', boxShadow:'0 4px 15px rgba(0,0,0,0.3)' }}>
-                {edu.icon}
+      <div className="timeline">
+        {educations.map((edu, i) => (
+          <div className="timeline-item" key={i}>
+            <div className="timeline-dot" />
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '8px' }}>
+              <div>
+                <div className="timeline-year">{edu.year}</div>
+                <div className="timeline-title">{edu.degree}</div>
+                <div className="timeline-subtitle">{edu.institution}</div>
               </div>
-              <div className="timeline-year">{edu.year}</div>
-              <div className="timeline-title">{edu.degree}</div>
-              <div className="timeline-subtitle">{edu.institution}</div>
-              <div style={{ display:'inline-flex', alignItems:'center', gap:'6px', padding:'6px 14px', background:'rgba(102,126,234,0.1)', border:'1px solid rgba(102,126,234,0.3)', borderRadius:'50px', fontSize:'13px', fontWeight:'600', color:'var(--primary)' }}>
-                <FiAward size={13} /> {edu.detail}
-              </div>
+              <div style={{ fontSize: '28px' }}>{edu.icon}</div>
             </div>
-          ))}
-        </div>
+            <div className="timeline-detail">
+              <FiAward size={13} /> {edu.detail}
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Education;
