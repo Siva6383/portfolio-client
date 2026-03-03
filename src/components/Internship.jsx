@@ -3,11 +3,12 @@ import { FiCheckCircle } from 'react-icons/fi';
 
 const internships = [
   {
-    year: '2024',
-    company: 'Codesoft',
+    year: '2025',
+    month: 'june-july',
+    company: 'TipApps Technologies',
     role: 'Web Development Intern',
     color: '#d4af37',
-    tech: ['HTML5', 'CSS3', 'JavaScript', 'React.js'],
+    tech: ['React.js', 'Node.js', 'MongoDB', 'Express'],
     contributions: [
       'Built responsive web pages from Figma designs',
       'Created reusable React components',
@@ -17,10 +18,11 @@ const internships = [
   },
   {
     year: '2024',
+    month: 'August - September',
     company: 'Octonet Technologies',
     role: 'Web Developer Intern',
     color: '#d4af37',
-    tech: ['React.js', 'Node.js', 'MongoDB', 'Express'],
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'React.js'],
     contributions: [
       'Developed full-stack features end-to-end',
       'Implemented JWT-based authentication',
@@ -29,11 +31,12 @@ const internships = [
     ],
   },
   {
-    year: '2023',
+    year: '2024',
+    month: "March - April",
     company: 'CodSoft Technologies',
     role: 'UI/UX Design Intern',
     color: '#d4af37',
-    tech: ['Figma', 'Adobe XD', 'Prototyping', 'User Research'],
+    tech: ['Figma', 'Fundamentals', 'Prototyping', 'User Research'],
     contributions: [
       'Designed wireframes and high-fidelity mockups',
       'Conducted user research and usability testing',
@@ -53,7 +56,7 @@ const Internship = () => (
         {internships.map((item, i) => (
           <div className="timeline-item" key={i}>
             <div className="timeline-dot" />
-            <div className="timeline-year">{item.year}</div>
+            <div className="timeline-year">{item.year} {item.month}</div>
             <div className="timeline-title">{item.role}</div>
             <div className="timeline-subtitle">{item.company}</div>
 

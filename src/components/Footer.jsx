@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="container">
         <div className="footer-social">
           {[
-            { icon: <FiGithub />, href: 'https://github.com/kishoreshub', label: 'GitHub' },
-            { icon: <FiLinkedin />, href: 'https://linkedin.com/in/kishore-s', label: 'LinkedIn' },
-            { icon: <FiMail />, href: 'mailto:kishore@example.com', label: 'Email' }
+            { icon: <FiGithub />, href: 'https://github.com/Siva6383', label: 'GitHub' },
+            { icon: <FiLinkedin />, href: 'https://www.linkedin.com/in/kishore-s-1703482a5/', label: 'LinkedIn' },
+            { icon: <FiMail />, href: 'mailto:sivaharish638349@gmail.com', label: 'Email' }
           ].map((social, i) => (
             <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="social-icon" title={social.label}>
               {social.icon}

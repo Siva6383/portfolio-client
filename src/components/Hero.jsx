@@ -6,6 +6,7 @@ const roles = [
   'MERN Stack Enthusiast',
   'React Developer',
   'Node.js Developer',
+  'Software Developer'
 ];
 
 const Hero = () => {
@@ -41,10 +42,10 @@ const Hero = () => {
 
           {/* ── Left: Text Content ── */}
           <div>
-            <div className="hero-badge animate-up">
+            {/* <div className="hero-badge animate-up">
               <span className="dot" />
               Available for Work
-            </div>
+            </div> */}
 
             <h1 className="hero-name animate-up animate-delay-1">
               Hi, I'm<br /><span>Kishore S</span>
@@ -111,7 +112,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="https://linkedin.com/in/kishore-s"
+                href="https://www.linkedin.com/in/kishore-s-1703482a5/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"

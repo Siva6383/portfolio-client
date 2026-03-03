@@ -59,7 +59,7 @@ const Contact = () => {
             {[
               { icon: <FiMail />, label: 'Email', value: 'sivaharish638349@gmail.com', href: 'mailto:sivaharish638349@gmail.com' },
               { icon: <FiGithub />, label: 'GitHub', value: 'github.com/Siva6383', href: 'https://github.com/Siva6383' },
-              { icon: <FiLinkedin />, label: 'LinkedIn', value: 'linkedin.com/in/kishore-s', href: 'https://linkedin.com/in/kishore-s' },
+              { icon: <FiLinkedin />, label: 'LinkedIn', value: 'linkedin.com/in/kishore-s', href: 'https://www.linkedin.com/in/kishore-s-1703482a5/' },
             ].map((item, i) => (
               <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="contact-info-item">
                 <div className="contact-icon">{item.icon}</div>
