@@ -39,7 +39,7 @@ const Hero = () => {
       <div className="container">
         <div className="hero-grid">
 
-          {/* ── Text Side ── */}
+          {/* ── Left: Text Content ── */}
           <div>
             <div className="hero-badge animate-up">
               <span className="dot" />
@@ -52,7 +52,7 @@ const Hero = () => {
 
             <div className="hero-role animate-up animate-delay-2">
               <span className="typing-text">{displayText}</span>
-              <span style={{ color: 'var(--gold)', marginLeft: '1px' }}>|</span>
+              <span style={{ color: 'var(--gold)', marginLeft: '2px' }}>|</span>
             </div>
 
             <p className="hero-desc animate-up animate-delay-3">
@@ -60,15 +60,18 @@ const Hero = () => {
               I build scalable, production-ready web apps with clean code and elegant UI.
             </p>
 
+            {/* ── Buttons ── */}
             <div className="hero-buttons animate-up animate-delay-4">
-              
+              <a
                 href="/assets/Kishore_Resume.pdf"
                 download="Kishore_S_Resume.pdf"
                 className="btn btn-primary"
               >
-                <FiDownload /> Download CV
+                <FiDownload />
+                Download CV
               </a>
               
+              <a
                 href="#contact"
                 className="btn btn-outline"
                 onClick={(e) => {
@@ -76,16 +79,18 @@ const Hero = () => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                <FiMail /> Get in Touch
+                <FiMail />
+                Get in Touch
               </a>
             </div>
 
+            {/* ── Stats ── */}
             <div className="hero-stats animate-up">
               {[
-                { number: '4+', label: 'Projects' },
+                { number: '4+',   label: 'Projects' },
                 { number: '8.18', label: 'CGPA' },
-                { number: '3', label: 'Internships' },
-                { number: '6+', label: 'Technologies' },
+                { number: '3',    label: 'Internships' },
+                { number: '6+',   label: 'Technologies' },
               ].map((s, i) => (
                 <div className="stat-item" key={i}>
                   <div className="stat-number">{s.number}</div>
@@ -94,34 +99,47 @@ const Hero = () => {
               ))}
             </div>
 
+            {/* ── Social Icons ── */}
             <div style={{ display: 'flex', gap: '12px', marginTop: '28px' }}>
-              <a href="https://github.com/Siva6383" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <a
+                href="https://github.com/Siva6383"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+              >
                 <FiGithub />
               </a>
-              <a href="https://linkedin.com/in/kishore-s" target="_blank" rel="noopener noreferrer" className="social-icon">
+
+              <a
+                href="https://linkedin.com/in/kishore-s"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+              >
                 <FiLinkedin />
               </a>
             </div>
           </div>
 
-          {/* ── Image Side ── */}
+          {/* ── Right: Profile Image ── */}
           <div className="hero-image-wrapper animate-up animate-delay-2">
             <div className="hero-image-ring">
               <div className="hero-image-inner">
-                {/* Replace src with your actual photo path */}
                 <img
                   src="/assets/profile.jpg"
                   alt="Kishore S"
                   onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentNode.innerHTML = '👨‍💻';
-                    e.target.parentNode.style.fontSize = '80px';
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement.innerHTML = '👨‍💻';
+                    e.currentTarget.parentElement.style.fontSize = '80px';
+                    e.currentTarget.parentElement.style.display = 'flex';
+                    e.currentTarget.parentElement.style.alignItems = 'center';
+                    e.currentTarget.parentElement.style.justifyContent = 'center';
                   }}
                 />
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
