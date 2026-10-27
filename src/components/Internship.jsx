@@ -3,6 +3,20 @@ import { FiCheckCircle } from 'react-icons/fi';
 
 const internships = [
   {
+    year: '2026',
+    month: "August - November",
+    company: 'Ocean Softwares Pvt Ltd',
+    role: 'Full Stack Developer Intern',
+    color: '#d4af37',
+    tech: ['React.js', 'Node.js', 'MongoDB', 'Express'],
+    contributions: [
+      'Contributed to real-world projects and application development',
+      'Developed and enhanced features based on project requirements',
+      'Integrated REST APIs and managed database operations',
+      'Collaborated with the team to debug issues and deliver functional solutions',
+    ],
+  },
+  {
     year: '2025',
     month: 'june-july',
     company: 'TipApps Technologies',
@@ -28,20 +42,6 @@ const internships = [
       'Implemented JWT-based authentication',
       'Optimized MongoDB queries for performance',
       'Deployed applications to cloud platforms',
-    ],
-  },
-  {
-    year: '2024',
-    month: "March - April",
-    company: 'CodSoft Technologies',
-    role: 'UI/UX Design Intern',
-    color: '#d4af37',
-    tech: ['Figma', 'Fundamentals', 'Prototyping', 'User Research'],
-    contributions: [
-      'Designed wireframes and high-fidelity mockups',
-      'Conducted user research and usability testing',
-      'Created design systems and component libraries',
-      'Collaborated closely with development teams',
     ],
   },
 ];

@@ -3,10 +3,10 @@ import { FiAward } from 'react-icons/fi';
 
 const educations = [
   {
-    year: '2023 – Present',
+    year: '2023 – 2026',
     degree: 'B.E. Computer Science Engineering',
     institution: 'SNS College of Engineering',
-    detail: 'CGPA: 8.18',
+    detail: 'CGPA: 8.27',
     icon: '🎓',
   },
   {

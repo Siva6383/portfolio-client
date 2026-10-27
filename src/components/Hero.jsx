@@ -89,7 +89,7 @@ const Hero = () => {
             <div className="hero-stats animate-up">
               {[
                 { number: '4+',   label: 'Projects' },
-                { number: '8.18', label: 'CGPA' },
+                { number: '8.27', label: 'CGPA' },
                 { number: '3',    label: 'Internships' },
                 { number: '6+',   label: 'Technologies' },
               ].map((s, i) => (

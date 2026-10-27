@@ -18,17 +18,16 @@ const About = () => {
           <div className="about-text">
             <p>
               I'm <strong style={{ color: 'var(--text)' }}>Kishore S</strong>, a Full Stack Developer
-              pursuing B.E. in Computer Science Engineering at{' '}
+              and B.E. Computer Science and Engineering graduate from{' '}
               <strong style={{ color: 'var(--gold)' }}>SNS College of Engineering</strong> with a
-              CGPA of <strong style={{ color: 'var(--gold)' }}>8.18</strong>.
+              CGPA of <strong style={{ color: 'var(--gold)' }}>8.27</strong>.
             </p>
             <p>
               I specialize in the <strong style={{ color: 'var(--gold)' }}>MERN stack</strong> —
-              building everything from responsive frontends to robust, secure backends. I enjoy turning
-              complex problems into clean, elegant solutions.
+              building responsive, user-friendly web applications with React.js, Node.js, Express.js, and MongoDB. I have completed a <strong style={{ color: 'var(--gold)' }}>3-month internship</strong>, gaining practical experience in web development, application development, and solving real-world technical challenges.
             </p>
             <p>
-              My approach combines <strong style={{ color: 'var(--text)' }}>technical precision</strong> with
+              My approach combines <strong style={{ color: 'var(--gold)' }}>technical precision</strong> with
               a strong attention to user experience. I'm always learning and pushing to deliver
               production-quality work.
             </p>
